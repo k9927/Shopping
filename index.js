@@ -14,12 +14,10 @@ app.use(express.static("public"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// Updated Database Connection
 const db = new pg.Client({
-    user: "postgres",
-    host: "localhost",
-    database: "Project CSR",
-    password: "12345",
-    port: 5432,
+    connectionString: process.env.DATABASE_URL,
+    ssl: { rejectUnauthorized: false } // Required for Neon
 });
 db.connect();
 
