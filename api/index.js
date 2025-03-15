@@ -114,6 +114,5 @@ app.get("/:id", async (req, res) => {
 });
 
 // Start the server
-app.listen(port, () => {
-    console.log(`API is running at http://localhost:${port}`);
-});
+export default app;
+
